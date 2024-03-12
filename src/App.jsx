@@ -5,6 +5,7 @@ import { Header } from "./Components/Header/Header";
 import { Users } from "./Components/Users/Users";
 import { Routes, Route } from "react-router-dom";
 import { UserContext } from "./Context/User";
+import { SingleArticle } from "./Components/SingleArticle/SingleArticle";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
@@ -20,6 +21,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<ArticlesList />} />
+        <Route path="/articles/:article_id" element={<SingleArticle />} />
         <Route path="/users" element={<Users />} />
       </Routes>
     </UserContext.Provider>

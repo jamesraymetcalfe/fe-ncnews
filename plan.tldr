@@ -66,9 +66,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": -573.7046936602462,
-			"y": -3972.3857173194187,
-			"lastActivityTimestamp": 1710189868596,
+			"x": -1089.9354107363906,
+			"y": -5027.882531114211,
+			"lastActivityTimestamp": 1710233393779,
 			"meta": {}
 		},
 		{
@@ -79,9 +79,9 @@
 			"typeName": "page"
 		},
 		{
-			"x": 1796.3767859518666,
-			"y": 4914.344532438485,
-			"z": 0.45973845198875357,
+			"x": 1903.9441347427335,
+			"y": 5286.359299166232,
+			"z": 0.5765448037094294,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -121,8 +121,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1167,
-				"h": 703
+				"w": 1175,
+				"h": 430
 			},
 			"insets": [
 				false,
@@ -2310,8 +2310,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -606.8858027012257,
-			"y": -4063.5838299459992,
+			"x": -167.98985463087365,
+			"y": -3817.902359837505,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2333,8 +2333,8 @@
 				},
 				"end": {
 					"type": "point",
-					"x": -33.24146046733961,
-					"y": 71.80621207212153
+					"x": 77.79313926905309,
+					"y": 86.88781710212606
 				},
 				"arrowheadStart": "none",
 				"arrowheadEnd": "arrow",
@@ -2346,8 +2346,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -697.1867565289867,
-			"y": -3989.1803559457303,
+			"x": -112.33485848375312,
+			"y": -3715.84219604982,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -3211,8 +3211,44 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -865.3430701762798,
-			"y": -4036.082204768467,
+			"x": -116.60576045108814,
+			"y": -3813.8478575658364,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"type": "arrow",
+			"parentId": "page:page",
+			"index": "b0t",
+			"props": {
+				"dash": "draw",
+				"size": "m",
+				"fill": "none",
+				"color": "blue",
+				"labelColor": "black",
+				"bend": 0,
+				"start": {
+					"type": "point",
+					"x": 0,
+					"y": 0
+				},
+				"end": {
+					"type": "point",
+					"x": 53.637701439314014,
+					"y": 89.54123384291188
+				},
+				"arrowheadStart": "none",
+				"arrowheadEnd": "arrow",
+				"text": "",
+				"labelPosition": 0.5,
+				"font": "draw"
+			},
+			"id": "shape:cVzZCIEtYpz4ls2jATne2",
+			"typeName": "shape"
+		},
+		{
+			"x": -43.62075803163134,
+			"y": -3673.5713999205036,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -3221,8 +3257,8 @@
 			"props": {
 				"color": "blue",
 				"size": "m",
-				"w": 221.515625,
-				"text": "upVote, setUpVote\ndownVote, \nsetDownVote",
+				"w": 298.703125,
+				"text": "upVote, setUpVote\ndownVote, setDownVote",
 				"font": "draw",
 				"align": "start",
 				"autoSize": true,

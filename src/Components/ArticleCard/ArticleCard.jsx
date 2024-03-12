@@ -5,11 +5,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
+import { Link } from "react-router-dom";
 
 export const ArticleCard = ({ article }) => {
   return (
     <section className="cards">
       <Card sx={{ width: 500 }}>
+      <Link to={`/articles/${article.article_id}`}> 
         <CardContent>
           <Typography gutterBottom variant="body" component="div">
             #{article.topic}
@@ -24,6 +26,7 @@ export const ArticleCard = ({ article }) => {
             <ModeCommentOutlinedIcon className="icon" /> {article.comment_count}
           </Typography>
         </CardContent>
+        </Link>
       </Card>
     </section>
   );
