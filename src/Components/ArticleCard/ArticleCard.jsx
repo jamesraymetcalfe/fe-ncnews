@@ -11,21 +11,22 @@ export const ArticleCard = ({ article }) => {
   return (
     <section className="cards">
       <Card sx={{ width: 500 }}>
-      <Link to={`/articles/${article.article_id}`}> 
-        <CardContent>
-          <Typography gutterBottom variant="body" component="div">
-            #{article.topic}
-          </Typography>
-          <CardMedia sx={{ height: 375 }} image={article.article_img_url} />
-          <Typography gutterBottom variant="h5" component="div">
-            {article.title}
-          </Typography>
+        <Link to={`/articles/${article.article_id}`}>
+          <CardContent>
+            <Typography gutterBottom variant="body" component="div">
+              #{article.topic}
+            </Typography>
+            <CardMedia sx={{ height: 375 }} image={article.article_img_url} />
+            <Typography gutterBottom variant="h5" component="div">
+              {article.title}
+            </Typography>
 
-          <Typography variant="p" component="div">
-            <FavoriteBorderIcon className="icon" /> {article.votes}
-            <ModeCommentOutlinedIcon className="icon" /> {article.comment_count}
-          </Typography>
-        </CardContent>
+            <Typography variant="p" component="div">
+              <FavoriteBorderIcon className="icon" /> {article.votes}
+              <ModeCommentOutlinedIcon className="icon" />
+              {article.comment_count}
+            </Typography>
+          </CardContent>
         </Link>
       </Card>
     </section>

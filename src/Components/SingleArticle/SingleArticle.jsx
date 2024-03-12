@@ -11,11 +11,13 @@ import Typography from "@mui/material/Typography";
 import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import ThumbDownAltOutlinedIcon from "@mui/icons-material/ThumbDownAltOutlined";
 import Button from "@mui/material/Button";
+import { CommentsList } from "../CommentsList/CommentsList";
 
 export const SingleArticle = () => {
   const { article_id } = useParams();
   const [singleArticle, setSingleArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [showComments, setShowComments] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -46,10 +48,10 @@ export const SingleArticle = () => {
         </Typography>
         <section className="card">
           <IconButton aria-label="up vote comment" sx={{ color: "black" }}>
-            <ThumbUpAltOutlinedIcon /> <p>100</p>
+            <ThumbUpAltOutlinedIcon />
           </IconButton>
           <IconButton aria-label="down vote article" sx={{ color: "black" }}>
-            <ThumbDownAltOutlinedIcon /> <p>100</p>
+            <ThumbDownAltOutlinedIcon />
           </IconButton>
           <Button
             variant="outlined"
@@ -60,13 +62,14 @@ export const SingleArticle = () => {
               marginLeft: "5px",
               "&:hover": { backgroundColor: "gold" },
             }}
+            onClick={() => {
+              setShowComments(!showComments);
+            }}
           >
-            View Comments
+            {showComments ? "Hide Comments" : "View Comments"}
           </Button>
         </section>
-        <ul>
-          <li>Helloooooo</li>
-        </ul>
+        {showComments ? <CommentsList article_id={article_id} /> : null}
       </Card>
     </section>
   );
