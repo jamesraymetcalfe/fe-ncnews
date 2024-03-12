@@ -1,0 +1,36 @@
+.logo-header {
+    background-color: white;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-bottom: 2px solid gold;
+  }
+
+  .link {
+    text-decoration: none;
+    color: black;
+  }
+  
+  #title {
+    font-weight: normal;
+    margin-left: 0.2em;
+    padding-right: 0.5em;
+    margin-right: 1em;
+    border-right: 1px solid grey;
+  }
+
+  #user {
+    font-weight: normal;
+    font-style: italic;
+    text-align: end;
+    margin-right: 1em;
+
+  }
+  
+  .navbar {
+    margin-left: auto;
+    margin-top: 30px;
+  }
+  
