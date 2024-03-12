@@ -6,12 +6,11 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
-import ThumbDownAltOutlinedIcon from "@mui/icons-material/ThumbDownAltOutlined";
 import Button from "@mui/material/Button";
 import { CommentsList } from "../CommentsList/CommentsList";
+
+import { Votes } from "../Votes/Votes";
 
 export const SingleArticle = () => {
   const { article_id } = useParams();
@@ -46,29 +45,25 @@ export const SingleArticle = () => {
         <Typography variant="body" sx={{ marginBottom: "1em" }}>
           {singleArticle.body}
         </Typography>
-        <section className="card">
-          <IconButton aria-label="up vote comment" sx={{ color: "black" }}>
-            <ThumbUpAltOutlinedIcon />
-          </IconButton>
-          <IconButton aria-label="down vote article" sx={{ color: "black" }}>
-            <ThumbDownAltOutlinedIcon />
-          </IconButton>
-          <Button
-            variant="outlined"
-            sx={{
-              backgroundColor: "white",
-              color: "black",
-              borderColor: "black",
-              marginLeft: "5px",
-              "&:hover": { backgroundColor: "gold" },
-            }}
-            onClick={() => {
-              setShowComments(!showComments);
-            }}
-          >
-            {showComments ? "Hide Comments" : "View Comments"}
-          </Button>
-        </section>
+
+        <Votes votes={singleArticle.votes} article_id={article_id} />
+
+        <Button
+          id="comments-button"
+          variant="outlined"
+          sx={{
+            color: "black",
+            borderColor: "black",
+            marginLeft: "5px",
+            "&:hover": { backgroundColor: "gold" },
+          }}
+          onClick={() => {
+            setShowComments(!showComments);
+          }}
+        >
+          {showComments ? "Hide Comments" : "View Comments"}
+        </Button>
+
         {showComments ? <CommentsList article_id={article_id} /> : null}
       </Card>
     </section>

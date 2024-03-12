@@ -18,7 +18,18 @@ export const getArticleById = (article_id) => {
 
 export const getCommentsById = (article_id) => {
   return newsApi.get(`articles/${article_id}/comments`).then((response) => {
-    console.log(response.data.comments)
     return response.data.comments;
   });
+};
+
+export const patchVote = (voteNum, article_id) => {
+  const patchBody = { inc_votes: voteNum };
+  return newsApi
+    .patch(`articles/${article_id}`, patchBody)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      return Promise.reject(error);
+    });
 };
