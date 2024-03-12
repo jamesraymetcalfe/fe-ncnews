@@ -1,0 +1,12 @@
+#vote-number {
+  font-weight: bold;
+  font-size: x-large;
+  margin: 0 0.5em;
+}
+
+.votes {
+  margin-right: 1.5em;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
