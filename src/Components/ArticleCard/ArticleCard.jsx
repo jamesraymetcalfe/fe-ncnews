@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 export const ArticleCard = ({ article }) => {
   return (
     <section className="cards">
-      <Card sx={{ width: 500 }}>
-        <Link to={`/articles/${article.article_id}`}>
+      <Card id="card" sx={{ width: 500 }}>
+        <Link id="link" to={`/articles/${article.article_id}`}>
           <CardContent>
             <Typography gutterBottom variant="body" component="div">
               #{article.topic}

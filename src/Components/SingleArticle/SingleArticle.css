@@ -1,12 +1,36 @@
 .card {
+  
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 4em;
 }
 
-#comments-button {
+#card {
+  border-top: 4px solid gold;
+}
+
+.comment-buttons {
+  
   display: flex;
-  margin-left: auto;
-  margin-right: 1.5em;
+  justify-content: space-between;
   margin-bottom: 1.5em;
+  margin-top: 1em;
+}
+
+#add-comment {
+  margin-right: 2em;
+}
+
+#show-comment {
+  margin-left: 2em;
+}
+
+#body {
+  margin: 1em;
+}
+
+#link {
+  text-decoration: none;
+  color: black;
 }

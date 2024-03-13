@@ -30,6 +30,15 @@ export const patchVote = (voteNum, article_id) => {
       return response.data;
     })
     .catch((error) => {
-      return Promise.reject(error);
+      throw error;
+    });
+};
+
+export const postNewComment = (newComment, username, article_id) => {
+  const postBody = { username: username, body: newComment };
+  return newsApi
+    .post(`articles/${article_id}/comments`, postBody)
+    .then((response) => {
+      return response.data.comments;
     });
 };

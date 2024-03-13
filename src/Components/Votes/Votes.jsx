@@ -1,6 +1,6 @@
 import "./Votes.css";
-import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
-import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
+import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
+import ThumbDownAltOutlinedIcon from "@mui/icons-material/ThumbDownAltOutlined";
 import IconButton from "@mui/material/IconButton";
 import { patchVote } from "../../api";
 import { useState } from "react";
@@ -12,15 +12,14 @@ export const Votes = ({ votes, article_id }) => {
     const voteSum = newVote + voteNum;
     setNewVote(voteSum);
     patchVote(voteNum, article_id).catch((error) => {
-      const errorSum = newVote - voteNum;
-      setNewVote(errorSum);
-      setError("Sorry, voting is not currently working");
+      setError(
+        "Sorry, voting is not currently working. Try refreshing the page"
+      );
     });
   };
 
   return (
     <section className="votes">
-        
       {error ? <p> {error} </p> : null}
       <IconButton
         aria-label="up vote comment"
@@ -31,9 +30,9 @@ export const Votes = ({ votes, article_id }) => {
         }}
         onClick={() => handleVote(1)}
       >
-        <ArrowCircleUpIcon size="large" />
+        <ThumbUpAltOutlinedIcon size="large" />
       </IconButton>
-      <p id="vote-number">{newVote}</p>
+      {error ? <p id="vote-number"> X </p> : <p id="vote-number">{newVote}</p>}
       <IconButton
         aria-label="down vote article"
         sx={{
@@ -43,7 +42,7 @@ export const Votes = ({ votes, article_id }) => {
         }}
         onClick={() => handleVote(-1)}
       >
-        <ArrowCircleDownIcon />
+        <ThumbDownAltOutlinedIcon />
       </IconButton>
     </section>
   );
