@@ -9,14 +9,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import { CommentsList } from "../CommentsList/CommentsList";
 import { Votes } from "../Votes/Votes";
-import { AddComment } from "../AddComment/AddComment";
 
 export const SingleArticle = () => {
   const { article_id } = useParams();
   const [singleArticle, setSingleArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [showComments, setShowComments] = useState(false);
-  const [showCommentForm, setShowCommentForm] = useState(false);
+ 
 
   useEffect(() => {
     setIsLoading(true);
@@ -62,25 +61,13 @@ export const SingleArticle = () => {
             {showComments ? "Hide Comments" : "View Comments"}
           </Button>
 
-          <Button
-            id="add-comment"
-            variant="outlined"
-            sx={{
-              color: "black",
-              borderColor: "black",
-              marginLeft: "5px",
-              "&:hover": { backgroundColor: "gold" },
-            }}
-            onClick={() => {
-              setShowCommentForm(!showCommentForm);
-            }}
-          >
-            {showCommentForm ? "Hide Input" : "Add Comment"}
-          </Button>
+       
         </section>
-
-        {showCommentForm ? <AddComment article_id={article_id} /> : null}
-        {showComments ? <CommentsList article_id={article_id} /> : null}
+        {showComments ? (
+          <CommentsList
+            article_id={article_id}
+          />
+        ) : null}
       </Card>
     </section>
   );

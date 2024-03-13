@@ -1,3 +1,4 @@
+import { common } from "@mui/material/colors";
 import axios from "axios";
 
 const newsApi = axios.create({
@@ -39,6 +40,15 @@ export const postNewComment = (newComment, username, article_id) => {
   return newsApi
     .post(`articles/${article_id}/comments`, postBody)
     .then((response) => {
-      return response.data.comments;
+      return response.data.comment;
+    })
+    .catch((error) => {
+      throw error;
     });
+};
+
+export const deleteCommentFromList = (comment_id) => {
+  return newsApi.delete(`comments/${comment_id}`).then((response) => {
+    return response.status;
+  });
 };

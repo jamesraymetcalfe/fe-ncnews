@@ -5,30 +5,46 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../Context/User";
 import Button from "@mui/material/Button";
 import { postNewComment } from "../../api";
+import CircularProgress from "@mui/material/CircularProgress";
 
-export const AddComment = ({ article_id }) => {
+export const AddComment = ({ article_id, setCommentsList }) => {
   const [newComment, setNewComment] = useState("");
   const { loggedInUser } = useContext(UserContext);
   const [isPostSuccessful, setIsPostSuccessful] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleInput = (event) => {
     setNewComment(event.target.value);
   };
 
   const handleSubmit = () => {
+    setIsLoading(true);
     setIsPostSuccessful(false);
-    postNewComment(newComment, loggedInUser.username, article_id).then(() => {
-      setNewComment("");
-      setIsPostSuccessful(true);
-    });
+    postNewComment(newComment, loggedInUser.username, article_id)
+      .then((newCommentFromApi) => {
+        setNewComment("");
+        setIsPostSuccessful(true);
+        setCommentsList((currentComments) => {
+          return [newCommentFromApi, ...currentComments];
+        });
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setIsLoading(false);
+        setError(
+          "Sorry, new comments are not currently working. Please try again later"
+        );
+        console.log(error);
+      });
   };
 
-  if (isPostSuccessful) {
+  if (isLoading) {
+    return <CircularProgress sx={{ color: "gold" }} />;
+  } else if (isPostSuccessful) {
     return (
       <section className="posting-message">
-        <p>
-          Thanks for getting involved! Refresh the page to view your comment
-        </p>
+        <p>Thanks for getting involved!</p>
         <Button
           id="hide-button"
           variant="outlined"
@@ -44,7 +60,30 @@ export const AddComment = ({ article_id }) => {
             "&:hover": { backgroundColor: "gold", borderColor: "black" },
           }}
         >
-          OK, cool
+          Cool
+        </Button>
+      </section>
+    );
+  } else if (error) {
+    return (
+      <section className="posting-message">
+        <p>{error}</p>
+        <Button
+          id="hide-button"
+          variant="outlined"
+          size="small"
+          onClick={() => {
+            setError("");
+          }}
+          sx={{
+            color: "black",
+            backgroundColor: "gold",
+            borderColor: "gold",
+            marginLeft: "5px",
+            "&:hover": { backgroundColor: "gold", borderColor: "black" },
+          }}
+        >
+          Hide
         </Button>
       </section>
     );
@@ -85,6 +124,7 @@ export const AddComment = ({ article_id }) => {
           onClick={() => {
             handleSubmit();
           }}
+          disabled={newComment === ""}
           sx={{
             color: "black",
             backgroundColor: "gold",
