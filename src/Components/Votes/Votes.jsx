@@ -11,7 +11,7 @@ export const Votes = ({ votes, article_id }) => {
   const handleVote = (voteNum) => {
     const voteSum = newVote + voteNum;
     setNewVote(voteSum);
-    patchVote(voteNum, article_id).catch((error) => {
+    patchVote(voteNum, article_id).catch(() => {
       setError(
         "Sorry, voting is not currently working. Try refreshing the page"
       );

@@ -1,0 +1,6 @@
+.add-comment {
+  display: flex;
+  justify-content: end;
+  margin-right: 2em;
+  margin-bottom: 1em;
+}
