@@ -1,11 +1,15 @@
 .cards {
-    margin: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .icon {
-    padding-left: 0.3em;
-  }
-  
+  margin: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#card {
+  border-top: 4px solid gold;
+}
+
+.icon {
+  padding-left: 0.3em;
+  padding-right: 0.1em;
+}
