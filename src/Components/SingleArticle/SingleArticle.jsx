@@ -10,6 +10,7 @@ import Button from "@mui/material/Button";
 import { CommentsList } from "../CommentsList/CommentsList";
 import { Votes } from "../Votes/Votes";
 
+
 export const SingleArticle = () => {
   const { article_id } = useParams();
   const [singleArticle, setSingleArticle] = useState({});
@@ -29,6 +30,7 @@ export const SingleArticle = () => {
     return <CircularProgress sx={{ color: "gold" }} />;
   }
   return (
+    <>
     <section className="card">
       <Card id="card" sx={{ width: 500 }}>
         <CardHeader
@@ -70,5 +72,6 @@ export const SingleArticle = () => {
         ) : null}
       </Card>
     </section>
+    </>
   );
 };

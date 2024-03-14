@@ -1,14 +1,33 @@
-import { common } from "@mui/material/colors";
 import axios from "axios";
 
 const newsApi = axios.create({
   baseURL: "https://nc-news-srco.onrender.com/api/",
 });
 
-export const getArticles = () => {
-  return newsApi.get("articles").then((response) => {
-    return response.data.articles;
-  });
+export const getArticles = (sort_by, order) => {
+  if (sort_by === null && order === null) {
+    return newsApi.get("articles?sort_by=created_at").then((response) => {
+      return response.data.articles;
+    });
+  }
+  if (sort_by === null) {
+    return newsApi
+      .get(`articles?sort_by=created_at&order=${order}`)
+      .then((response) => {
+        return response.data.articles;
+      });
+  }
+  if (order === null) {
+    return newsApi.get(`articles?sort_by=${sort_by}`).then((response) => {
+      return response.data.articles;
+    });
+  }
+
+  return newsApi
+    .get(`articles?sort_by=${sort_by}&order=${order}`)
+    .then((response) => {
+      return response.data.articles;
+    });
 };
 
 export const getArticleById = (article_id) => {
