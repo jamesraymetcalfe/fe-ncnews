@@ -52,3 +52,15 @@ export const deleteCommentFromList = (comment_id) => {
     return response.status;
   });
 };
+
+export const getTopics = () => {
+  return newsApi.get("topics").then((response) => {
+    return response.data.topics;
+  });
+};
+
+export const getArticlesByTopic = (topic) => {
+  return newsApi.get(`articles?topic=${topic}`).then((response) => {
+    return response.data.articles;
+  });
+};
