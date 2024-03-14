@@ -35,7 +35,6 @@ export const AddComment = ({ article_id, setCommentsList }) => {
         setError(
           "Sorry, new comments are not currently working. Please try again later"
         );
-        console.log(error);
       });
   };
 

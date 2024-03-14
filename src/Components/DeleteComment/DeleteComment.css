@@ -1,6 +1,14 @@
 .button {
-    margin-right: 0.5em;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-  }
+  margin-right: 0.5em;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.delete-success {
+  margin: 1em;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+}
