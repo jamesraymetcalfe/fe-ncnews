@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getArticlesByTopic } from "../../api";
 import CircularProgress from "@mui/material/CircularProgress";
 import { ArticleCard } from "../ArticleCard/ArticleCard";
+import { TopicsList } from "../TopicsList/TopicsList";
 
 export const TopicFilter = () => {
   const { topic } = useParams();
@@ -22,10 +23,15 @@ export const TopicFilter = () => {
     return <CircularProgress sx={{ color: "gold" }} />;
   }
   return (
+    <>
+    <section className="topic-links">
+    <TopicsList />
+  </section>
     <ul>
       {articles.map((article) => {
         return <ArticleCard article={article} key={article.article_id} />;
       })}
     </ul>
+    </>
   );
 };

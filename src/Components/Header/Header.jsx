@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../Context/User";
 import { useContext } from "react";
-import { TopicsList } from "../TopicsList/TopicsList";
+
 
 export const Header = () => {
   const { loggedInUser } = useContext(UserContext);
@@ -31,9 +31,7 @@ export const Header = () => {
       <Link className="link" to={"/users"}>
         <h3 id="user">You are signed in as {loggedInUser.username}</h3>
       </Link>
-      <section className="topic-links">
-      <TopicsList/>
-      </section>
+ 
     </section>
   );
 };
