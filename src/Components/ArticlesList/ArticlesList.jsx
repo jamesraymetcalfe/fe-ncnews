@@ -50,8 +50,8 @@ export const ArticlesList = () => {
   }
   return (
     <>
-      <SortBy setSortBy={setSortBy} />
-      <OrderBy setOrderBy={setOrderBy} />
+      <SortBy sort_by={sort_by} setSortBy={setSortBy} />
+      <OrderBy order={order} setOrderBy={setOrderBy} />
       <section className="topic-links">
         <TopicsList />
       </section>
