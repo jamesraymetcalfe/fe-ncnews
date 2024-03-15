@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
 import { Link } from "react-router-dom";
-import { TopicsList } from "../TopicsList/TopicsList";
+
 
 export const ArticleCard = ({ article }) => {
   return (

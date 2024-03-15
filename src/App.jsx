@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import { SingleArticle } from "./Components/SingleArticle/SingleArticle";
 import { UserProvider } from "./Context/User";
 import { TopicFilter } from "./Components/TopicFilter/TopicFilter";
+import { ErrorPage } from "./Components/ErrorPage/ErrorPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/articles/:article_id" element={<SingleArticle />} />
         <Route path="/users" element={<Users />} />
         <Route path="/articles/topic/:topic" element={<TopicFilter />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </UserProvider>
   );
