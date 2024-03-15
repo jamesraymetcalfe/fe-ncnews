@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./SingleArticle.css";
 import { useParams } from "react-router-dom";
 import { getArticleById } from "../../api";
-import CircularProgress from "@mui/material/CircularProgress";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
@@ -10,6 +9,7 @@ import Button from "@mui/material/Button";
 import { CommentsList } from "../CommentsList/CommentsList";
 import { Votes } from "../Votes/Votes";
 import { ErrorPage } from "../ErrorPage/ErrorPage";
+import { Loading } from "../Loading/Loading";
 
 export const SingleArticle = () => {
   const { article_id } = useParams();
@@ -32,7 +32,7 @@ export const SingleArticle = () => {
   }, []);
 
   if (isLoading) {
-    return <CircularProgress sx={{ color: "gold" }} />;
+    return <Loading/>;
   }
   if (error) {
     return <ErrorPage error={error} />;

@@ -4,9 +4,9 @@ const newsApi = axios.create({
   baseURL: "https://nc-news-srco.onrender.com/api/",
 });
 
-export const getArticles = (sort_by, order) => {
+export const getArticles = (sort_by, order, topic) => {
   return newsApi
-    .get("articles", { params: { sort_by, order } })
+    .get("articles", { params: { sort_by, order, topic } })
     .then((response) => {
       return response.data.articles;
     })
@@ -83,13 +83,13 @@ export const getTopics = () => {
     });
 };
 
-export const getArticlesByTopic = (topic) => {
-  return newsApi
-    .get(`articles?topic=${topic}`)
-    .then((response) => {
-      return response.data.articles;
-    })
-    .catch((error) => {
-      throw error;
-    });
-};
+// export const getArticlesByTopic = (topic) => {
+//   return newsApi
+//     .get(`articles?topic=${topic}`)
+//     .then((response) => {
+//       return response.data.articles;
+//     })
+//     .catch((error) => {
+//       throw error;
+//     });
+// };

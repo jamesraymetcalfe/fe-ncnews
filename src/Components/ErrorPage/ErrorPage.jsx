@@ -6,11 +6,18 @@ export const ErrorPage = ({ error }) => {
   return (
     <section className="error">
       <Paper elevation={3}>
+        <Typography id="message" variant="h5">
+          {" "}
+          Oh no, that's an error ...{" "}
+        </Typography>
         {error ? (
-          <Typography id="message" variant="h5"> Oh no... {error}</Typography>
+          <Typography id="message" variant="h5">
+            {" "}
+            sorry, {error}{" "}
+          </Typography>
         ) : (
           <Typography id="message" variant="h5">
-            Oh no... path not found
+            sorry, path not found
           </Typography>
         )}
         <img

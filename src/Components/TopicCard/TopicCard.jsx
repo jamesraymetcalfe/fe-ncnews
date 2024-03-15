@@ -6,7 +6,7 @@ export const TopicCard = ({ topic }) => {
   return (
     <Link to={`/articles/topic/${topic.slug}`}>
       <Button
-        id="button"
+        id="topic-button"
         variant="text"
         sx={{
             color: "black",

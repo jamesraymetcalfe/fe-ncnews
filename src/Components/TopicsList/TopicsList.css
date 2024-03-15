@@ -1,0 +1,8 @@
+.topic-buttons {
+    display: inline-flex;
+  }
+
+  #topic-button {
+    margin-right: 2em;
+  }
+  

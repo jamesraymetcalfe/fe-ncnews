@@ -3,18 +3,6 @@
   justify-content: center;
 }
 
-.sorting-buttons {
-  display: flex; 
-  justify-content: center; 
-  align-items: center;
-}
-
-.ordering-buttons {
-  display: flex; 
-  justify-content: center; 
-  align-items: center;
-}
-
 #arrange-title {
   font-weight: normal;
 }

@@ -3,15 +3,17 @@ import Button from "@mui/material/Button";
 import { UserContext } from "../../Context/User";
 import { useContext, useState } from "react";
 import { deleteCommentFromList } from "../../api";
-import CircularProgress from "@mui/material/CircularProgress";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
+import { Loading } from "../Loading/Loading";
+import { ErrorPage } from "../ErrorPage/ErrorPage";
 
 export const DeleteComment = ({ comment, setCommentsList }) => {
   const { loggedInUser } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
+  const [error, setError] = useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -24,18 +26,26 @@ export const DeleteComment = ({ comment, setCommentsList }) => {
   const handleDelete = () => {
     setOpen(false);
     setIsLoading(true);
-    deleteCommentFromList(comment.comment_id).then(() => {
-      setCommentsList((previousComments) =>
-        previousComments.filter(
-          (comments) => comments.comment_id !== comment.comment_id
-        )
-      );
-      setIsLoading(false);
-    });
+    deleteCommentFromList(comment.comment_id)
+      .then(() => {
+        setCommentsList((previousComments) =>
+          previousComments.filter(
+            (comments) => comments.comment_id !== comment.comment_id
+          )
+        );
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        setError(err.response.data.msg);
+      });
   };
 
   if (isLoading) {
-    return <CircularProgress sx={{ color: "gold" }} />;
+    return <Loading />;
+  }
+  if (error) {
+    return <ErrorPage error={error} />;
   }
   return (
     <section className="button">
