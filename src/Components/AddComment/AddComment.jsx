@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../Context/User";
 import Button from "@mui/material/Button";
 import { postNewComment } from "../../api";
-import CircularProgress from "@mui/material/CircularProgress";
+import { Loading } from "../Loading/Loading";
 
 export const AddComment = ({ article_id, setCommentsList }) => {
   const [newComment, setNewComment] = useState("");
@@ -39,7 +39,7 @@ export const AddComment = ({ article_id, setCommentsList }) => {
   };
 
   if (isLoading) {
-    return <CircularProgress sx={{ color: "gold" }} />;
+    return <Loading/>;
   } else if (isPostSuccessful) {
     return (
       <section className="posting-message">

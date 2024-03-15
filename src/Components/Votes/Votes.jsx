@@ -13,14 +13,14 @@ export const Votes = ({ votes, article_id }) => {
     setNewVote(voteSum);
     patchVote(voteNum, article_id).catch(() => {
       setError(
-        "Sorry, voting is not currently working. Try refreshing the page"
+        "Sorry, voting is not currently working. Please try again later"
       );
     });
   };
 
   return (
     <section className="votes">
-      {error ? <p> {error} </p> : null}
+      {error ? <p id="error-message"> {error} </p> : null}
       <IconButton
         aria-label="up vote comment"
         sx={{

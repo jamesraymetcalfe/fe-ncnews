@@ -10,3 +10,11 @@
   justify-content: end;
   align-items: center;
 }
+
+#error-message {
+  margin: 1em;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+}
