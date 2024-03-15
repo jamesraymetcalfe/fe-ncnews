@@ -7,6 +7,7 @@ import { TopicCard } from "../TopicCard/TopicCard";
 export const TopicsList = () => {
   const [topicsList, setTopicsList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  
   useEffect(() => {
     setIsLoading(true);
     getTopics().then((data) => {

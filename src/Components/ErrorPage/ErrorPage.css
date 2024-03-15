@@ -1,0 +1,17 @@
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 80vw;
+  text-align: center;
+  font-size: larger;
+}
+
+#error-img {
+  max-width: 80%;
+}
+
+#message {
+  margin-top: 1em;
+}
