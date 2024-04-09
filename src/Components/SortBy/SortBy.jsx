@@ -21,7 +21,7 @@ export const SortBy = ({ sort_by, setSortBy }) => {
   return (
     <section className="sorting-buttons">
       <FormControl sx={{ minWidth: 150 }}>
-        <InputLabel id="sortBy-select">Arrange By</InputLabel>
+        <InputLabel id="sortBy-select">ARRANGE BY</InputLabel>
         <Select
           labelId="sortBy-select"
           value={selectValue}

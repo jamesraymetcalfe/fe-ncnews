@@ -28,10 +28,11 @@ export const Header = () => {
           </Link>
         </nav>
       </header>
+      
       <Link className="link" to={"/users"}>
         <h3 id="user">You are signed in as {loggedInUser.username}</h3>
       </Link>
- 
+      
     </section>
   );
 };

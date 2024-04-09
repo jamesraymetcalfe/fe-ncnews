@@ -1,0 +1,9 @@
+.user-cards {
+  display: flex;
+  justify-content: center;
+
+}
+
+#user-card {
+  border-top: 4px solid gold;
+}

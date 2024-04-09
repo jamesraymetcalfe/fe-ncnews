@@ -1,5 +1,6 @@
 .ordering-buttons {
     display: flex; 
-    justify-content: center; 
+    justify-content: left; 
     align-items: center;
+    margin-left: 2em;
   }

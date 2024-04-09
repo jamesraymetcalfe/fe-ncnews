@@ -83,13 +83,13 @@ export const getTopics = () => {
     });
 };
 
-// export const getArticlesByTopic = (topic) => {
-//   return newsApi
-//     .get(`articles?topic=${topic}`)
-//     .then((response) => {
-//       return response.data.articles;
-//     })
-//     .catch((error) => {
-//       throw error;
-//     });
-// };
+export const getUsers = () => {
+  return newsApi
+    .get("users")
+    .then((response) => {
+      return response.data.users;
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
